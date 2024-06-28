@@ -253,36 +253,36 @@
 import tkinter as tk
 from tkinter import Label, Radiobutton, PhotoImage
 
-window = tk.Tk()
-window.title("Pizza Image Example")
+# window = tk.Tk()
+# window.title("Pizza Image Example")
 
-food = ['pizza', 'hamburger', 'hotdog']
+# food = ['pizza', 'hamburger', 'hotdog']
 
-pizzaImage = PhotoImage(file="")
-hamburgerImage = PhotoImage(file="")
-hotdogImage = PhotoImage(file="")
+# pizzaImage = PhotoImage(file="")
+# hamburgerImage = PhotoImage(file="")
+# hotdogImage = PhotoImage(file="")
 
-foodImages = [pizzaImage, hamburgerImage, hotdogImage]
+# foodImages = [pizzaImage, hamburgerImage, hotdogImage]
 
-x = tk.IntVar()
+# x = tk.IntVar()
 
-for index in range(len(food)):
-    radiobutton = Radiobutton(window,
-                              text=food[index],
-                              variable=x,
-                              value=index,
-                              compound=tk.LEFT,
-                              padx=25,
-                              font=("impact", 20),
-                              image=foodImages[index])
+# for index in range(len(food)):
+#     radiobutton = Radiobutton(window,
+#                               text=food[index],
+#                               variable=x,
+#                               value=index,
+#                               compound=tk.LEFT,
+#                               padx=25,
+#                               font=("impact", 20),
+#                               image=foodImages[index])
 
-    radiobutton.pack(anchor=tk.W)
+#     radiobutton.pack(anchor=tk.W)
 
-window.pizzaImage = pizzaImage
-window.hamburgerImage = hamburgerImage
-window.hotdogImage = hotdogImage
+# window.pizzaImage = pizzaImage
+# window.hamburgerImage = hamburgerImage
+# window.hotdogImage = hotdogImage
 
-window.mainloop()
+# window.mainloop()
 
 
 
@@ -417,6 +417,48 @@ window.mainloop()
 #     button.pack()
 
 # window.mainloop()
+from tkinter import *
+from tkinter import messagebox
+
+def click():
+    answer = messagebox.askyesno(title="Yes or No", message="Do you like to code?")
+    if answer:
+        print("I like to code too!")
+    elif answer is False:
+        print("Do you like watching people doing code?")
+    else:
+        print("You have dodged the question.")
+
+window = Tk()
+window.title("Message Box Example")
+
+# Create a button to trigger the message box
+button = Button(window, text='Click me', command=click)
+button.pack(pady=20)
+
+# Start the Tkinter main loop
+window.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                    
