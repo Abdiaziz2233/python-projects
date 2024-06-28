@@ -250,81 +250,81 @@
 
 
 
-# import tkinter as tk
-# from tkinter import Label, Radiobutton, PhotoImage
+import tkinter as tk
+from tkinter import Label, Radiobutton, PhotoImage
 
-# window = tk.Tk()
-# window.title("Pizza Image Example")
+window = tk.Tk()
+window.title("Pizza Image Example")
 
-# food = ['pizza', 'hamburger', 'hotdog']
+food = ['pizza', 'hamburger', 'hotdog']
 
-# pizzaImage = PhotoImage(file="")
-# hamburgerImage = PhotoImage(file="")
-# hotdogImage = PhotoImage(file="")
+pizzaImage = PhotoImage(file="")
+hamburgerImage = PhotoImage(file="")
+hotdogImage = PhotoImage(file="")
 
-# foodImages = [pizzaImage, hamburgerImage, hotdogImage]
+foodImages = [pizzaImage, hamburgerImage, hotdogImage]
 
-# x = tk.IntVar()
+x = tk.IntVar()
 
-# for index in range(len(food)):
-#     radiobutton = Radiobutton(window,
-#                               text=food[index],
-#                               variable=x,
-#                               value=index,
-#                               compound=tk.LEFT,
-#                               padx=25,
-#                               font=("impact", 20),
-#                               image=foodImages[index])
+for index in range(len(food)):
+    radiobutton = Radiobutton(window,
+                              text=food[index],
+                              variable=x,
+                              value=index,
+                              compound=tk.LEFT,
+                              padx=25,
+                              font=("impact", 20),
+                              image=foodImages[index])
 
-#     radiobutton.pack(anchor=tk.W)
+    radiobutton.pack(anchor=tk.W)
 
-# window.pizzaImage = pizzaImage
-# window.hamburgerImage = hamburgerImage
-# window.hotdogImage = hotdogImage
-
-# window.mainloop()
-
-
-
-
-
-
-
-
-
-from tkinter import *
-
-def submit():
-    print("Temperature is: " + str(scale.get()) + " degrees Celsius")
-
-window = Tk()
-
-window.title("Temperature Converter")
-
-scale = Scale(window, 
-              from_=0,
-              to=100, 
-              length=600,
-            #   showvalue=0, 
-              resolution=5, 
-              tickinterval=10,
-              troughcolor="#69FAFF",
-              fg="#FF1C00",
-              bg="#111111",
-        
-              orient=VERTICAL)
-scale.pack(pady=20)
-scale.set(((scale["from"] - scale["to"]) / 2) + scale["to"])
-
-
-coldImage =PhotoImage(file="")
-coldlabel =Label(image =coldImage)
-coldlabel.pack()
-
-button = Button(window, text="Submit", command=submit)
-button.pack()
+window.pizzaImage = pizzaImage
+window.hamburgerImage = hamburgerImage
+window.hotdogImage = hotdogImage
 
 window.mainloop()
+
+
+
+
+
+
+
+
+
+# from tkinter import *
+
+# def submit():
+#     print("Temperature is: " + str(scale.get()) + " degrees Celsius")
+
+# window = Tk()
+
+# window.title("Temperature Converter")
+
+# scale = Scale(window, 
+#               from_=0,
+#               to=100, 
+#               length=600,
+#             #   showvalue=0, 
+#               resolution=5, 
+#               tickinterval=10,
+#               troughcolor="#69FAFF",
+#               fg="#FF1C00",
+#               bg="#111111",
+        
+#               orient=VERTICAL)
+# scale.pack(pady=20)
+# scale.set(((scale["from"] - scale["to"]) / 2) + scale["to"])
+
+
+# coldImage =PhotoImage(file="")
+# coldlabel =Label(image =coldImage)
+# coldlabel.pack()
+
+# button = Button(window, text="Submit", command=submit)
+# button.pack()
+
+# window.mainloop()
 
 
 
