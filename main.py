@@ -292,114 +292,131 @@
 
 
 
-# from tkinter import *
-
-# def submit():
-#     print("Temperature is: " + str(scale.get()) + " degrees Celsius")
-
-# window = Tk()
-
-# window.title("Temperature Converter")
-
-# scale = Scale(window, 
-#               from_=0,
-#               to=100, 
-#               length=600,
-#             #   showvalue=0, 
-#               resolution=5, 
-#               tickinterval=10,
-#               troughcolor="#69FAFF",
-#               fg="#FF1C00",
-#               bg="#111111",
-        
-#               orient=VERTICAL)
-# scale.pack(pady=20)
-# scale.set(((scale["from"] - scale["to"]) / 2) + scale["to"])
-
-
-# coldImage =PhotoImage(file="")
-# coldlabel =Label(image =coldImage)
-# coldlabel.pack()
-
-# button = Button(window, text="Submit", command=submit)
-# button.pack()
-
-# window.mainloop()
-# 
 from tkinter import *
 
 def submit():
-    selected_indices = listbox.curselection()
-    if selected_indices:
-        selected_items = [listbox.get(index) for index in selected_indices]
-        print(f"You ordered: {', '.join(selected_items)}")
-    else:
-        print("Please select an item from the list.")
-
-
-
-def add():
-    new_item = entry.get().strip()
-    if new_item: 
-        listbox.insert(END, new_item)
-        listbox.config(height=listbox.size()) 
-        entry.delete(0, END) 
-    else:
-        print("Please enter an item to add.")
-
-
-
-def delete():
-    selected_indices = listbox.curselection()
-    if selected_indices:
-        for index in reversed(selected_indices):  # Delete items from last to first
-            listbox.delete(index)
-        listbox.config(height=listbox.size())
-    else:
-        print("Please select an item to delete.")
-
-
-
-def clear():
-    listbox.delete(0, END)
-    listbox.config(height=listbox.size())
-
-
-
-def exit_program():
-    window.destroy()
-
-
+    print("Temperature is: " + str(scale.get()) + " degrees Celsius")
 
 window = Tk()
 
-listbox = Listbox(window, bg="#f7ffde", font=("constantia", 35), width=12, selectmode=MULTIPLE)
-listbox.pack()
+window.title("Temperature Converter")
 
-initial_items = ["pizza", "garlic bread", "pasta", "ugali", "hamburger","rice saldato", "ugali sukuma", "caybacayn", "",]
-for item in initial_items:
-    listbox.insert(END, item)
-
-entry = Entry(window)
-entry.pack()
-
-
-commands = [
-    ("Submit", submit),
-    ("Add", add),
-    ("Delete", delete),
-    ("Clear", clear),
-    ("Exit", exit_program)
-]
+scale = Scale(window, 
+              from_=0,
+              to=100, 
+              length=600,
+            #   showvalue=0, 
+              resolution=5, 
+              tickinterval=10,
+              troughcolor="#69FAFF",
+              fg="#FF1C00",
+              bg="#111111",
+        
+              orient=VERTICAL)
+scale.pack(pady=20)
+scale.set(((scale["from"] - scale["to"]) / 2) + scale["to"])
 
 
+coldImage =PhotoImage(file="")
+coldlabel =Label(image =coldImage)
+coldlabel.pack()
 
-
-for text, command in commands:
-    button = Button(window, text=text, command=command)
-    button.pack()
+button = Button(window, text="Submit", command=submit)
+button.pack()
 
 window.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# from tkinter import *
+
+# def submit():
+#     selected_indices = listbox.curselection()
+#     if selected_indices:
+#         selected_items = [listbox.get(index) for index in selected_indices]
+#         print(f"You ordered: {', '.join(selected_items)}")
+#     else:
+#         print("Please select an item from the list.")
+
+
+
+# def add():
+#     new_item = entry.get().strip()
+#     if new_item: 
+#         listbox.insert(END, new_item)
+#         listbox.config(height=listbox.size()) 
+#         entry.delete(0, END) 
+#     else:
+#         print("Please enter an item to add.")
+
+
+
+# def delete():
+#     selected_indices = listbox.curselection()
+#     if selected_indices:
+#         for index in reversed(selected_indices):  # Delete items from last to first
+#             listbox.delete(index)
+#         listbox.config(height=listbox.size())
+#     else:
+#         print("Please select an item to delete.")
+
+
+
+# def clear():
+#     listbox.delete(0, END)
+#     listbox.config(height=listbox.size())
+
+
+
+# def exit_program():
+#     window.destroy()
+
+
+
+# window = Tk()
+
+# listbox = Listbox(window, bg="#f7ffde", font=("constantia", 35), width=12, selectmode=MULTIPLE)
+# listbox.pack()
+
+# initial_items = ["pizza", "garlic bread", "pasta", "ugali", "hamburger","rice saldato", "ugali sukuma", "caybacayn", "",]
+# for item in initial_items:
+#     listbox.insert(END, item)
+
+# entry = Entry(window)
+# entry.pack()
+
+
+# commands = [
+#     ("Submit", submit),
+#     ("Add", add),
+#     ("Delete", delete),
+#     ("Clear", clear),
+#     ("Exit", exit_program)
+# ]
+
+
+
+
+# for text, command in commands:
+#     button = Button(window, text=text, command=command)
+#     button.pack()
+
+# window.mainloop()
 
 
                    
