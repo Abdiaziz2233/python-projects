@@ -69,13 +69,27 @@
 #     print("Finished in", end_time - start_time, "seconds")
 
 # if __name__ == "__main__":
-#     main()
+
+
+
+
+
+
+
+# #     main()
 # from tkinter import *
 
 # # Create the main window
 # from tkinter import *
 
 # # Create the main window
+
+
+
+
+
+
+
 # from tkinter import *
 
 # # Create the main window
@@ -84,63 +98,71 @@
 # window.title("Zizo's First Personal Programming")  # Set window title
 # window.config(background='#62f5e1')  # Set background color
 
-# # Set window icon
-# # icon = PhotoImage(file="Apple.png")
-# # window.iconphoto(True, icon)
+# Set window icon
+# icon = PhotoImage(file="Apple.png")
+# window.iconphoto(True, icon)
 
-# # # Load an image
-# # photo = PhotoImage(file='Apple.png')
+# # Load an image
+# photo = PhotoImage(file='Apple.png')
 
-# # # Create a label widget with text, image, and other properties
-# # label = Label(window,
-# #               text="Hello, World!",
-# #               font=('Arial', 40, 'bold'),
-# #               fg='#00ff00',
-# #               bg='black',
-# #               relief=RAISED,
-# #               bd=10,
-# #               padx=20,
-# #               pady=20,
-# #               compound='top',  # 'compound' should be a string ('top' in this case)
-# #               image=photo)
+# # Create a label widget with text, image, and other properties
+# label = Label(window,
+#               text="Hello, World!",
+#               font=('Arial', 40, 'bold'),
+#               fg='#00ff00',
+#               bg='black',
+#               relief=RAISED,
+#               bd=10,
+#               padx=20,
+#               pady=20,
+#               compound='top',  # 'compound' should be a string ('top' in this case)
+#               image=photo)
 
-# # # Pack the label widget into the window with some padding
-# # label.pack(pady=50)
-# # Start the main event loop
-# # from tkinter import *
-# # import tkinter as tk
-
-# # count = 0
+# # Pack the label widget into the window with some padding
+# label.pack(pady=50)
+# Start the main event loop
 
 
 
-# # def click():
-# #     print()
-# #     global count
-# #     count += 1
-# #     print(count)
-
-# # # Create the main window
-# # window = Tk()
-
-# # # # Load image
-# # # photo = PhotoImage(file="photo.jpg")
-
-
-# # button = tk.Button(window,
-# #                    text="Click me!",
-# #                    command=click,
-# #                    font=("Comic Sans MS", 30),
-# #                    fg="#00ff00",        
-# #                    bg="black",          
-# #                    activeforeground="#00ff00",  
-# #                    activebackground="black",     
-# #                    state=ACTIVE,  
-# #                 #    image=photo,
-# #                    compound="bottom")
 
 
 
+
+# from tkinter import *
+# import tkinter as tk
+
+# count = 0
+
+
+
+# def click():
+#     print()
+#     global count
+#     count += 1
+#     print(count)
+
+# # Create the main window
+# window = Tk()
+
+# # # Load image
+# # photo = PhotoImage(file="photo.jpg")
+
+
+# button = tk.Button(window,
+#                    text="Click me!",
+#                    command=click,
+#                    font=("Comic Sans MS", 30),
+#                    fg="#00ff00",        
+#                    bg="black",          
+#                    activeforeground="#00ff00",  
+#                    activebackground="black",     
+#                    state=ACTIVE,  
+#                 #    image=photo,
+#                    compound="bottom")
+
+
+
+# window.mainloop()
 
 
 
@@ -182,10 +204,8 @@
 
 
 
-
-
-
 # from tkinter import *
+
 
 # def display():
 #     if x.get() == 1:
@@ -193,23 +213,35 @@
 #     else:
 #         print("You disagree")
 
+# # Create the main Tkinter window
 # window = Tk()
 
+# # Initialize an IntVar to hold the state of the Checkbutton
 # x = IntVar()
 
-# check_button = Checkbutton(window, text="I agree to something", 
-#                            variable=x, onvalue=1, offvalue=0, 
+# # Create a Checkbutton widget
+# check_button = Checkbutton(window, 
+#                            text="I agree to something", 
+#                            variable=x, 
+#                            onvalue=1, 
+#                            offvalue=0, 
 #                            command=display,
 #                            font=("Arial", 20),
 #                            fg="#00ff00",
 #                            bg="black",
 #                            activeforeground="#00ff00",
 #                            activebackground="black",
-#                            padx=25,  # Added comma here
-#                            pady=10     # Added pady parameter (optional)
+#                            padx=25,  # Horizontal padding around the text
+#                            pady=10   # Vertical padding around the text
 #                            )
+
+# # Pack the Checkbutton widget into the window
 # check_button.pack()
+
+# # Start the Tkinter event loop
 # window.mainloop()
+
+
 
 
 
@@ -254,6 +286,120 @@
 
 
 
+
+
+
+
+
+
+# from tkinter import *
+
+# def submit():
+#     print("Temperature is: " + str(scale.get()) + " degrees Celsius")
+
+# window = Tk()
+
+# window.title("Temperature Converter")
+
+# scale = Scale(window, 
+#               from_=0,
+#               to=100, 
+#               length=600,
+#             #   showvalue=0, 
+#               resolution=5, 
+#               tickinterval=10,
+#               troughcolor="#69FAFF",
+#               fg="#FF1C00",
+#               bg="#111111",
+        
+#               orient=VERTICAL)
+# scale.pack(pady=20)
+# scale.set(((scale["from"] - scale["to"]) / 2) + scale["to"])
+
+
+# coldImage =PhotoImage(file="")
+# coldlabel =Label(image =coldImage)
+# coldlabel.pack()
+
+# button = Button(window, text="Submit", command=submit)
+# button.pack()
+
+# window.mainloop()
+# 
+from tkinter import *
+
+def submit():
+    selected_indices = listbox.curselection()
+    if selected_indices:
+        selected_items = [listbox.get(index) for index in selected_indices]
+        print(f"You ordered: {', '.join(selected_items)}")
+    else:
+        print("Please select an item from the list.")
+
+
+
+def add():
+    new_item = entry.get().strip()
+    if new_item: 
+        listbox.insert(END, new_item)
+        listbox.config(height=listbox.size()) 
+        entry.delete(0, END) 
+    else:
+        print("Please enter an item to add.")
+
+
+
+def delete():
+    selected_indices = listbox.curselection()
+    if selected_indices:
+        for index in reversed(selected_indices):  # Delete items from last to first
+            listbox.delete(index)
+        listbox.config(height=listbox.size())
+    else:
+        print("Please select an item to delete.")
+
+
+
+def clear():
+    listbox.delete(0, END)
+    listbox.config(height=listbox.size())
+
+
+
+def exit_program():
+    window.destroy()
+
+
+
+window = Tk()
+
+listbox = Listbox(window, bg="#f7ffde", font=("constantia", 35), width=12, selectmode=MULTIPLE)
+listbox.pack()
+
+initial_items = ["pizza", "garlic bread", "pasta", "ugali", "hamburger","rice saldato", "ugali sukuma", "caybacayn", "",]
+for item in initial_items:
+    listbox.insert(END, item)
+
+entry = Entry(window)
+entry.pack()
+
+
+commands = [
+    ("Submit", submit),
+    ("Add", add),
+    ("Delete", delete),
+    ("Clear", clear),
+    ("Exit", exit_program)
+]
+
+
+
+
+for text, command in commands:
+    button = Button(window, text=text, command=command)
+    button.pack()
+
+window.mainloop()
 
 
                    
