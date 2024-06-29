@@ -417,27 +417,51 @@ from tkinter import Label, Radiobutton, PhotoImage
 #     button.pack()
 
 # window.mainloop()
+# from tkinter import *
+# from tkinter import messagebox
+
+# def click():
+#     answer = messagebox.askyesno(title="Yes or No", message="Do you like to code?")
+#     if answer:
+#         print("I like to code too!")
+#     elif answer is False:
+#         print("Do you like watching people doing code?")
+#     else:
+#         print("You have dodged the question.")
+
+# window = Tk()
+# window.title("Message Box Example")
+
+# # Create a button to trigger the message box
+# button = Button(window, text='Click me', command=click)
+# button.pack(pady=20)
+
+# # Start the Tkinter main loop
+# window.mainloop()
+
+
+
+
 from tkinter import *
-from tkinter import messagebox
+from tkinter import colorchooser
 
 def click():
-    answer = messagebox.askyesno(title="Yes or No", message="Do you like to code?")
-    if answer:
-        print("I like to code too!")
-    elif answer is False:
-        print("Do you like watching people doing code?")
+    color = colorchooser.askcolor()
+    if color[1]:
+        colorHex = color[1]
+        print("Selected color:", colorHex)
+        window.config(bg=colorHex)  # Update window background color
     else:
-        print("You have dodged the question.")
+        print("No color selected.")
 
 window = Tk()
-window.title("Message Box Example")
+window.geometry("420x420")
 
-# Create a button to trigger the message box
-button = Button(window, text='Click me', command=click)
-button.pack(pady=20)
+button = Button(window, text="Click me!", command=click)
+button.pack()
 
-# Start the Tkinter main loop
 window.mainloop()
+
 
 
 
