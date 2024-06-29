@@ -442,23 +442,49 @@ from tkinter import Label, Radiobutton, PhotoImage
 
 
 
-from tkinter import *
-from tkinter import colorchooser
 
-def click():
-    color = colorchooser.askcolor()
-    if color[1]:
-        colorHex = color[1]
-        print("Selected color:", colorHex)
-        window.config(bg=colorHex)  # Update window background color
-    else:
-        print("No color selected.")
+
+
+# from tkinter import *
+# from tkinter import colorchooser
+
+# def click():
+#     color = colorchooser.askcolor()
+#     if color[1]:
+#         colorHex = color[1]
+#         print("Selected color:", colorHex)
+#         window.config(bg=colorHex)  # Update window background color
+#     else:
+#         print("No color selected.")
+
+# window = Tk()
+# window.geometry("420x420")
+
+# button = Button(window, text="Click me!", command=click)
+# button.pack()
+
+# window.mainloop()
+
+
+
+
+
+from tkinter import *
+
+def submit():
+    text_input = text.get("1.0", END)
+    print("Input:", text_input)
 
 window = Tk()
-window.geometry("420x420")
+window.geometry("400x300")
+window.title("Text Input Example")
 
-button = Button(window, text="Click me!", command=click)
-button.pack()
+text = Text(window, height=10, width=40)
+text.config(font=("Ink Free", 12), bg='light yellow',fg='purple')  # Configure font and background color
+text.pack()
+
+button = Button(window, text="Submit", command=submit)
+button.pack(pady=10)
 
 window.mainloop()
 
