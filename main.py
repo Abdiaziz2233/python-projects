@@ -250,8 +250,8 @@
 
 
 
-import tkinter as tk
-from tkinter import Label, Radiobutton, PhotoImage
+# import tkinter as tk
+# from tkinter import Label, Radiobutton, PhotoImage
 
 # window = tk.Tk()
 # window.title("Pizza Image Example")
@@ -283,6 +283,10 @@ from tkinter import Label, Radiobutton, PhotoImage
 # window.hotdogImage = hotdogImage
 
 # window.mainloop()
+
+
+
+
 
 
 
@@ -325,6 +329,11 @@ from tkinter import Label, Radiobutton, PhotoImage
 # button.pack()
 
 # window.mainloop()
+
+
+
+
+
 
 
 
@@ -445,6 +454,8 @@ from tkinter import Label, Radiobutton, PhotoImage
 
 
 
+
+
 # from tkinter import *
 # from tkinter import colorchooser
 
@@ -469,24 +480,69 @@ from tkinter import Label, Radiobutton, PhotoImage
 
 
 
-from tkinter import *
 
-def submit():
-    text_input = text.get("1.0", END)
-    print("Input:", text_input)
+
+
+
+
+# from tkinter import *
+
+# def submit():
+#     text_input = text.get("1.0", END)
+#     print("Input:", text_input)
+
+# window = Tk()
+# window.geometry("400x300")
+# window.title("Text Input Example")
+
+# text = Text(window, height=10, width=40)
+# text.config(font=("Ink Free", 12), bg='light yellow',fg='purple')  # Configure font and background color
+# text.pack()
+
+# button = Button(window, text="Submit", command=submit)
+# button.pack(pady=10)
+
+# window.mainloop()
+
+
+
+
+
+
+
+
+
+
+from tkinter import *
+from tkinter import filedialog
+import os
+
+def openfile():
+    filepath = filedialog.askopenfilename(initialdir="hello")
+    if filepath:
+        # Extract file title (filename) and file type (extension)
+        filename = os.path.basename(filepath)
+        file_extension = os.path.splitext(filename)[1]
+        
+        file = open(filepath, "r")
+        file_contents = file.read()
+        file.close()
+        
+        # Print file title and file type
+        print("File Title:", filename)
+        print("File Type:", file_extension)
+        print("File Contents:")
+        print(file_contents)
 
 window = Tk()
-window.geometry("400x300")
-window.title("Text Input Example")
-
-text = Text(window, height=10, width=40)
-text.config(font=("Ink Free", 12), bg='light yellow',fg='purple')  # Configure font and background color
-text.pack()
-
-button = Button(window, text="Submit", command=submit)
-button.pack(pady=10)
+button = Button(window, text="Open", command=openfile)
+button.pack()
 
 window.mainloop()
+
+
+
+
 
 
 
