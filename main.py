@@ -513,32 +513,71 @@
 
 
 
+# from tkinter import *
+# from tkinter import filedialog
+# import os
+
+# def openfile():
+#     filepath = filedialog.askopenfilename(initialdir="hello")
+#     if filepath:
+#         # Extract file title (filename) and file type (extension)
+#         filename = os.path.basename(filepath)
+#         file_extension = os.path.splitext(filename)[1]
+        
+#         file = open(filepath, "r")
+#         file_contents = file.read()
+#         file.close()
+        
+#         # Print file title and file type
+#         print("File Title:", filename)
+#         print("File Type:", file_extension)
+#         print("File Contents:")
+#         print(file_contents)
+
+# window = Tk()
+# button = Button(window, text="Open", command=openfile)
+# button.pack()
+
+# window.mainloop()
+
+
+
+
+
+
 from tkinter import *
 from tkinter import filedialog
-import os
 
-def openfile():
-    filepath = filedialog.askopenfilename(initialdir="hello")
-    if filepath:
-        # Extract file title (filename) and file type (extension)
-        filename = os.path.basename(filepath)
-        file_extension = os.path.splitext(filename)[1]
-        
-        file = open(filepath, "r")
-        file_contents = file.read()
-        file.close()
-        
-        # Print file title and file type
-        print("File Title:", filename)
-        print("File Type:", file_extension)
-        print("File Contents:")
-        print(file_contents)
+def savefile():
+    filename = filedialog.asksaveasfilename(
+        defaultextension=".txt",
+        filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
+    )
 
+    if filename == "":
+        return
+
+    file = open(filename, 'w')
+    filetext = text.get(1.0, END)
+    file.write(filetext)
+    file.close()
+
+# Create the main window
 window = Tk()
-button = Button(window, text="Open", command=openfile)
+window.title("Text Editor")
+
+# Create a Text widget for input
+text = Text(window)
+text.pack()
+
+# Create a button to trigger the savefile function
+button = Button(window, text="Save", command=savefile)
 button.pack()
 
+# Start the tkinter main loop
 window.mainloop()
+
+
 
 
 
