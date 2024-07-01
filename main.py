@@ -545,37 +545,99 @@
 
 
 
+
+
+
+# from tkinter import *
+# from tkinter import filedialog
+
+# def savefile():
+#     filename = filedialog.asksaveasfilename(
+#         defaultextension=".txt",
+#         filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
+#     )
+
+#     if filename == "":
+#         return
+
+#     file = open(filename, 'w')
+#     filetext = text.get(1.0, END)
+#     file.write(filetext)
+#     file.close()
+
+# # Create the main window
+# window = Tk()
+# window.title("Text Editor")
+
+# # Create a Text widget for input
+# text = Text(window)
+# text.pack()
+
+# # Create a button to trigger the savefile function
+# button = Button(window, text="Save", command=savefile)
+# button.pack()
+
+# # Start the tkinter main loop
+# window.mainloop()
+
+
+
+
+
 from tkinter import *
-from tkinter import filedialog
 
-def savefile():
-    filename = filedialog.asksaveasfilename(
-        defaultextension=".txt",
-        filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
-    )
+def new_file():
+    print("New file has been created")
 
-    if filename == "":
-        return
+def open_file():
+    print("File has been opened")
 
-    file = open(filename, 'w')
-    filetext = text.get(1.0, END)
-    file.write(filetext)
-    file.close()
+def save_file():
+    print("File has been saved")
 
-# Create the main window
+def copy():
+    print("Copy operation")
+
+def cut():
+    print("Cut operation")
+
+def paste():
+    print("Paste operation")
+
 window = Tk()
-window.title("Text Editor")
+window.title("Simple Text Editor")
 
-# Create a Text widget for input
-text = Text(window)
-text.pack()
+menubar = Menu(window)
 
-# Create a button to trigger the savefile function
-button = Button(window, text="Save", command=savefile)
-button.pack()
 
-# Start the tkinter main loop
+
+# File menu
+filemenu = Menu(menubar, tearoff=0,font=("MV boli",15))
+filemenu.add_command(label='New', command=new_file)
+filemenu.add_command(label='Open', command=open_file)
+filemenu.add_command(label='Save', command=save_file)
+filemenu.add_separator()
+filemenu.add_command(label='Exit', command=window.quit)
+menubar.add_cascade(label='File', menu=filemenu)
+
+
+
+
+# Edit menu
+editmenu = Menu(menubar, tearoff=0,font=("MV boli",15))
+editmenu.add_command(label='Copy', command=copy)
+editmenu.add_command(label='Cut', command=cut)
+editmenu.add_command(label='Paste', command=paste)
+menubar.add_cascade(label='Edit', menu=editmenu)
+
+
+
+# Display the menu
+window.config(menu=menubar)
 window.mainloop()
+
+
+
 
 
 
