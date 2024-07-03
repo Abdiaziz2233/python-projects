@@ -584,143 +584,74 @@
 
 
 
+# from tkinter import *
+
+# def new_file():
+#     print("New file has been created")
+
+# def open_file():
+#     print("File has been opened")
+
+# def save_file():
+#     print("File has been saved")
+
+# def copy():
+#     print("Copy operation")
+
+# def cut():
+#     print("Cut operation")
+
+# def paste():
+#     print("Paste operation")
+
+# window = Tk()
+# window.title("Simple Text Editor")
+
+# menubar = Menu(window)
+
+
+
+# # File menu
+# filemenu = Menu(menubar, tearoff=0,font=("MV boli",15))
+# filemenu.add_command(label='New', command=new_file)
+# filemenu.add_command(label='Open', command=open_file)
+# filemenu.add_command(label='Save', command=save_file)
+# filemenu.add_separator()
+# filemenu.add_command(label='Exit', command=window.quit)
+# menubar.add_cascade(label='File', menu=filemenu)
+
+
+
+
+# # Edit menu
+# editmenu = Menu(menubar, tearoff=0,font=("MV boli",15))
+# editmenu.add_command(label='Copy', command=copy)
+# editmenu.add_command(label='Cut', command=cut)
+# editmenu.add_command(label='Paste', command=paste)
+# menubar.add_cascade(label='Edit', menu=editmenu)
+
+
+
+# # Display the menu
+# window.config(menu=menubar)
+# window.mainloop()
+
+
+
+
+
 from tkinter import *
 
-def new_file():
-    print("New file has been created")
+window =Tk()
 
-def open_file():
-    print("File has been opened")
+frame = Frame(window,bg='pink',bd=5,relief=SUNKEN)
+frame.place(x=100,y=100)
+button = Button(frame, text="w",font=("consolas",25),width=3).pack(side=TOP)
+button = Button(frame, text="A",font=("consolas",25),width=3).pack(side=LEFT)
+button = Button(frame, text="S",font=("consolas",25),width=3).pack(side=LEFT)
+button = Button(frame, text="D",font=("consolas",25),width=3).pack(side=LEFT)
 
-def save_file():
-    print("File has been saved")
-
-def copy():
-    print("Copy operation")
-
-def cut():
-    print("Cut operation")
-
-def paste():
-    print("Paste operation")
-
-window = Tk()
-window.title("Simple Text Editor")
-
-menubar = Menu(window)
-
-
-
-# File menu
-filemenu = Menu(menubar, tearoff=0,font=("MV boli",15))
-filemenu.add_command(label='New', command=new_file)
-filemenu.add_command(label='Open', command=open_file)
-filemenu.add_command(label='Save', command=save_file)
-filemenu.add_separator()
-filemenu.add_command(label='Exit', command=window.quit)
-menubar.add_cascade(label='File', menu=filemenu)
-
-
-
-
-# Edit menu
-editmenu = Menu(menubar, tearoff=0,font=("MV boli",15))
-editmenu.add_command(label='Copy', command=copy)
-editmenu.add_command(label='Cut', command=cut)
-editmenu.add_command(label='Paste', command=paste)
-menubar.add_cascade(label='Edit', menu=editmenu)
-
-
-
-# Display the menu
-window.config(menu=menubar)
 window.mainloop()
-
-
-
-
-
-
-# import turtle
-
-# # Setup turtle screen
-# screen = turtle.Screen()
-# screen.bgcolor("white")
-
-# # Create turtle for drawing
-# t = turtle.Turtle()
-# t.speed(10)  # Set turtle speed
-
-# # Draw a square
-# def draw_square(size, color):
-#     t.color(color)
-#     t.begin_fill()
-#     for _ in range(4):
-#         t.forward(size)
-#         t.right(90)
-#     t.end_fill()
-
-# # Draw a circle
-# def draw_circle(radius, color):
-#     t.color(color)
-#     t.begin_fill()
-#     t.circle(radius)
-#     t.end_fill()
-
-# # Main logo design
-# def draw_logo():
-#     draw_square(100, "blue")
-#     draw_circle(50, "yellow")
-
-# # Move turtle to starting position
-# t.penup()
-# t.goto(-50, -50)
-# t.pendown()
-
-# # Draw the logo
-# draw_logo()
-
-# # Hide turtle and display final logo
-# t.hideturtle()
-# turtle.done()
-
-
-# import turtle
-
-# # Function to draw rectangle with rounded corners
-# def draw_rounded_rectangle(t, width, height, corner_radius):
-#     t.begin_fill()
-#     t.forward(width - 2 * corner_radius)
-#     t.circle(corner_radius, 90)
-#     t.forward(height - 2 * corner_radius)
-#     t.circle(corner_radius, 90)
-#     t.forward(width - 2 * corner_radius)
-#     t.circle(corner_radius, 90)
-#     t.forward(height - 2 * corner_radius)
-#     t.circle(corner_radius, 90)
-#     t.end_fill()
-
-# # Setup
-# turtle.bgcolor("#f0f0f0")
-# turtle.speed(0)
-# turtle.hideturtle()
-# turtle.penup()
-# turtle.goto(-150, 0)
-# turtle.pendown()
-
-# # Draw logo
-# turtle.color("#27ae60")
-# turtle.begin_fill()
-# draw_rounded_rectangle(turtle, 300, 100, 20)
-# turtle.end_fill()
-
-# turtle.penup()
-# turtle.goto(0, -20)
-# turtle.pendown()
-# turtle.color("#ffffff")
-# turtle.write("Sarap Pharmacy", font=("Arial", 18, "bold"))
-
-# turtle.done()
 
 
 
