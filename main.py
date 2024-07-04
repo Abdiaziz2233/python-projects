@@ -640,18 +640,65 @@
 
 
 
+# from tkinter import *
+
+# window =Tk()
+
+# frame = Frame(window,bg='pink',bd=5,relief=SUNKEN)
+# frame.place(x=100,y=100)
+# button = Button(frame, text="w",font=("consolas",25),width=3).pack(side=TOP)
+# button = Button(frame, text="A",font=("consolas",25),width=3).pack(side=LEFT)
+# button = Button(frame, text="S",font=("consolas",25),width=3).pack(side=LEFT)
+# button = Button(frame, text="D",font=("consolas",25),width=3).pack(side=LEFT)
+
+# window.mainloop()   
+
+
+
+# creating window 
+# from tkinter import *
+
+# def create_window():
+#     new_window = Toplevel()
+# window = Tk()
+
+# Button(window, text="Creacting new window", command=create_window).pack()
+
+
+# window.mainloop()
+
 from tkinter import *
+from tkinter import ttk
 
-window =Tk()
+# Create main window
+window = Tk()
+window.title("Tab Example")
 
-frame = Frame(window,bg='pink',bd=5,relief=SUNKEN)
-frame.place(x=100,y=100)
-button = Button(frame, text="w",font=("consolas",25),width=3).pack(side=TOP)
-button = Button(frame, text="A",font=("consolas",25),width=3).pack(side=LEFT)
-button = Button(frame, text="S",font=("consolas",25),width=3).pack(side=LEFT)
-button = Button(frame, text="D",font=("consolas",25),width=3).pack(side=LEFT)
+# Create a notebook (tabs container)
+notebook = ttk.Notebook(window)
 
+# Create tabs (Frames inside the notebook)
+tab1 = Frame(notebook)
+tab2 = Frame(notebook)
+
+# Add tabs to the notebook with respective labels
+notebook.add(tab1, text="Tab 1")
+notebook.add(tab2, text="Tab 2")
+
+# Add content to Tab 1
+Label(tab1, text="Hello, this is Tab 1", width=50, height=25).pack()
+
+# Add content to Tab 2
+Label(tab2, text="Goodbye, this is Tab 2", width=50, height=25).pack()
+
+# Pack the notebook (this will show the tabs and their content)
+notebook.pack()
+
+# Start the tkinter main loop
 window.mainloop()
+
+
+
 
 
 
