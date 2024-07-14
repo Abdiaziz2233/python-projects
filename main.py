@@ -80,6 +80,18 @@
 # from tkinter import *
 
 # # Create the main window
+
+
+
+
+
+
+
+
+
+
+
+
 # from tkinter import *
 
 # # Create the main window
@@ -98,7 +110,7 @@
 # window.title("Zizo's First Personal Programming")  # Set window title
 # window.config(background='#62f5e1')  # Set background color
 
-# Set window icon
+# # Set window icon
 # icon = PhotoImage(file="Apple.png")
 # window.iconphoto(True, icon)
 
@@ -120,7 +132,7 @@
 
 # # Pack the label widget into the window with some padding
 # label.pack(pady=50)
-# Start the main event loop
+# window.mainloop()
 
 
 
@@ -169,6 +181,11 @@
 
 
 
+
+# creating entrybox
+
+
+
 # from tkinter import *
 
 # def submit():
@@ -204,6 +221,8 @@
 
 
 
+# # creating checkedbox
+
 # from tkinter import *
 
 
@@ -216,10 +235,9 @@
 # # Create the main Tkinter window
 # window = Tk()
 
-# # Initialize an IntVar to hold the state of the Checkbutton
 # x = IntVar()
 
-# # Create a Checkbutton widget
+
 # check_button = Checkbutton(window, 
 #                            text="I agree to something", 
 #                            variable=x, 
@@ -231,8 +249,8 @@
 #                            bg="black",
 #                            activeforeground="#00ff00",
 #                            activebackground="black",
-#                            padx=25,  # Horizontal padding around the text
-#                            pady=10   # Vertical padding around the text
+#                            padx=25,
+#                            pady=10   
 #                            )
 
 # # Pack the Checkbutton widget into the window
@@ -350,7 +368,7 @@
 
 
 
-
+# creating box hotel menu
 
 # from tkinter import *
 
@@ -362,8 +380,6 @@
 #     else:
 #         print("Please select an item from the list.")
 
-
-
 # def add():
 #     new_item = entry.get().strip()
 #     if new_item: 
@@ -372,8 +388,6 @@
 #         entry.delete(0, END) 
 #     else:
 #         print("Please enter an item to add.")
-
-
 
 # def delete():
 #     selected_indices = listbox.curselection()
@@ -384,31 +398,32 @@
 #     else:
 #         print("Please select an item to delete.")
 
-
-
 # def clear():
 #     listbox.delete(0, END)
 #     listbox.config(height=listbox.size())
 
-
-
 # def exit_program():
 #     window.destroy()
 
-
-
 # window = Tk()
 
-# listbox = Listbox(window, bg="#f7ffde", font=("constantia", 35), width=12, selectmode=MULTIPLE)
+# listbox = Listbox(window, 
+#                 bg="#f7ffde", 
+#                 font=("constantia", 35),
+#                 width=12, 
+#                 selectmode=MULTIPLE)
 # listbox.pack()
 
-# initial_items = ["pizza", "garlic bread", "pasta", "ugali", "hamburger","rice saldato", "ugali sukuma", "caybacayn", "",]
+# initial_items = ["Pizza", 
+#                  "Garlic bread", 
+#                  "pasta", "Hotdog", "Hamburger",
+#                  "Rice saldato", "Ugali sukuma", 
+#                  "Caybacayn", "Tea","Juice","[]"]
 # for item in initial_items:
 #     listbox.insert(END, item)
 
 # entry = Entry(window)
 # entry.pack()
-
 
 # commands = [
 #     ("Submit", submit),
@@ -418,14 +433,26 @@
 #     ("Exit", exit_program)
 # ]
 
-
-
-
 # for text, command in commands:
 #     button = Button(window, text=text, command=command)
 #     button.pack()
 
 # window.mainloop()
+
+
+
+
+
+
+
+
+
+# creating messagebox 
+
+
+
+
+
 # from tkinter import *
 # from tkinter import messagebox
 
@@ -456,6 +483,9 @@
 
 
 
+# creating colorchooser
+
+
 # from tkinter import *
 # from tkinter import colorchooser
 
@@ -483,6 +513,8 @@
 
 
 
+
+# creating inputs 
 
 
 # from tkinter import *
@@ -584,6 +616,18 @@
 
 
 
+
+
+
+
+
+
+
+
+# # all in one files 
+
+
+
 # from tkinter import *
 
 # def new_file():
@@ -640,6 +684,9 @@
 
 
 
+
+
+
 # from tkinter import *
 
 # window =Tk()
@@ -655,6 +702,9 @@
 
 
 
+
+
+
 # creating window 
 # from tkinter import *
 
@@ -667,34 +717,116 @@
 
 # window.mainloop()
 
+# from tkinter import *
+# from tkinter import ttk
+
+# # Create main window
+# window = Tk()
+# window.title("Tab Example")
+
+# # Create a notebook (tabs container)
+# notebook = ttk.Notebook(window)
+
+# # Create tabs (Frames inside the notebook)
+# tab1 = Frame(notebook)
+# tab2 = Frame(notebook)
+
+# # Add tabs to the notebook with respective labels
+# notebook.add(tab1, text="Tab 1")
+# notebook.add(tab2, text="Tab 2")
+
+# # Add content to Tab 1
+# Label(tab1, text="Hello, this is Tab 1", width=50, height=25).pack()
+
+# # Add content to Tab 2
+# Label(tab2, text="Goodbye, this is Tab 2", width=50, height=25).pack()
+
+# # Pack the notebook (this will show the tabs and their content)
+# notebook.pack(expand=True, fill="both")
+
+# # Start the tkinter main loop
+# window.mainloop()
+
+
+
+# grid
+
+# import tkinter as tk
+
+# window = tk.Tk()
+
+# titleLabel = tk.Label(window, text="Enter your info", font=("Arial", 25))
+# titleLabel.grid(row=0, column=0, columnspan=2)
+
+# # First Name widgets
+# firstNameLabel = tk.Label(window, text="First Name:", width=20, bg='red')
+# firstNameLabel.grid(row=1, column=0)
+# firstNameEntry = tk.Entry(window)
+# firstNameEntry.grid(row=1, column=1)
+
+# # Last Name widgets
+# lastNameLabel = tk.Label(window, text="Last Name:", bg='green')
+# lastNameLabel.grid(row=2, column=0)
+# lastNameEntry = tk.Entry(window)
+# lastNameEntry.grid(row=2, column=1)
+
+# # Email widgets
+# emailLabel = tk.Label(window, text="Email:", width=30, bg='blue')
+# emailLabel.grid(row=3, column=0)
+# emailEntry = tk.Entry(window)
+# emailEntry.grid(row=3, column=1)
+
+# # Submit button
+# submitButton = tk.Button(window, text="Submit")
+# submitButton.grid(row=4, column=0, columnspan=2)
+
+# window.mainloop()
+
+
 from tkinter import *
-from tkinter import ttk
+from tkinter.ttk import Progressbar
 
-# Create main window
+def start():
+    total_gb = 5
+    downloaded_gb = 0
+    
+    def update_progress():
+        nonlocal downloaded_gb
+        if downloaded_gb < total_gb:
+            downloaded_gb += 0.1  # Simulate downloading 0.1 GB per iteration (adjust as needed)
+            progress = downloaded_gb * 100 / total_gb
+            bar['value'] = progress
+            label.config(text=f"{progress:.1f}%")
+            task_label.config(text=f"Downloading {downloaded_gb:.1f} GB / {total_gb} GB")
+            # Schedule the next update in 500 milliseconds
+            window.after(500, update_progress)
+        else:
+            # Reset progress bar and labels after completion
+            bar['value'] = 0
+            label.config(text="0.0%")
+            task_label.config(text="Downloading...")
+            downloaded_gb = 0
+    
+    # Start the progress update process
+    update_progress()
+
 window = Tk()
-window.title("Tab Example")
 
-# Create a notebook (tabs container)
-notebook = ttk.Notebook(window)
+bar = Progressbar(window, 
+                orient="horizontal",
+                length=200, 
+                mode='determinate')
+bar.pack(pady=10)
 
-# Create tabs (Frames inside the notebook)
-tab1 = Frame(notebook)
-tab2 = Frame(notebook)
+label = Label(window, text="0.0%")
+label.pack()
 
-# Add tabs to the notebook with respective labels
-notebook.add(tab1, text="Tab 1")
-notebook.add(tab2, text="Tab 2")
+task_label = Label(window, text="Downloading...")
+task_label.pack()
 
-# Add content to Tab 1
-Label(tab1, text="Hello, this is Tab 1", width=50, height=25).pack()
+button = Button(window, text="Download Game", command=start)
+button.pack(pady=10)
 
-# Add content to Tab 2
-Label(tab2, text="Goodbye, this is Tab 2", width=50, height=25).pack()
-
-# Pack the notebook (this will show the tabs and their content)
-notebook.pack()
-
-# Start the tkinter main loop
 window.mainloop()
 
 
