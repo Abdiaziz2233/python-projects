@@ -783,51 +783,86 @@
 # window.mainloop()
 
 
-from tkinter import *
-from tkinter.ttk import Progressbar
+# from tkinter import *
+# from tkinter.ttk import Progressbar
 
-def start():
-    total_gb = 5
-    downloaded_gb = 0
+# def start():
+#     total_gb = 5
+#     downloaded_gb = 0
     
-    def update_progress():
-        nonlocal downloaded_gb
-        if downloaded_gb < total_gb:
-            downloaded_gb += 0.1  # Simulate downloading 0.1 GB per iteration (adjust as needed)
-            progress = downloaded_gb * 100 / total_gb
-            bar['value'] = progress
-            label.config(text=f"{progress:.1f}%")
-            task_label.config(text=f"Downloading {downloaded_gb:.1f} GB / {total_gb} GB")
-            # Schedule the next update in 500 milliseconds
-            window.after(500, update_progress)
-        else:
-            # Reset progress bar and labels after completion
-            bar['value'] = 0
-            label.config(text="0.0%")
-            task_label.config(text="Downloading...")
-            downloaded_gb = 0
+#     def update_progress():
+#         nonlocal downloaded_gb
+#         if downloaded_gb < total_gb:
+#             downloaded_gb += 0.1  # Simulate downloading 0.1 GB per iteration (adjust as needed)
+#             progress = downloaded_gb * 100 / total_gb
+#             bar['value'] = progress
+#             label.config(text=f"{progress:.1f}%")
+#             task_label.config(text=f"Downloading {downloaded_gb:.1f} GB / {total_gb} GB")
+#             # Schedule the next update in 500 milliseconds
+#             window.after(500, update_progress)
+#         else:
+#             # Reset progress bar and labels after completion
+#             bar['value'] = 0
+#             label.config(text="0.0%")
+#             task_label.config(text="Downloading...")
+#             downloaded_gb = 0
     
-    # Start the progress update process
-    update_progress()
+#     # Start the progress update process
+#     update_progress()
+
+# window = Tk()
+
+# bar = Progressbar(window, 
+#                 orient="vertical",
+#                 length=200, 
+#                 mode='determinate')
+# bar.pack(pady=10)
+
+# label = Label(window, text="0.0%")
+# label.pack()
+
+# task_label = Label(window, text="Downloading...")
+# task_label.pack()
+
+# button = Button(window, text="Download Game", command=start)
+# button.pack(pady=10)
+
+# window.mainloop()
+
+
+
+
+
+
+
+
+# creating canvas
+
+from tkinter import *
 
 window = Tk()
+canvas = Canvas(window, height=500, width=500)
 
-bar = Progressbar(window, 
-                orient="horizontal",
-                length=200, 
-                mode='determinate')
-bar.pack(pady=10)
+# Drawing lines
+canvas.create_line(0, 0, 500, 500, fill="blue", width=5)
+canvas.create_line(0, 500, 500, 0, fill="red", width=5)
 
-label = Label(window, text="0.0%")
-label.pack()
+# Drawing a rectangle
+canvas.create_rectangle(50, 50, 250, 250, fill="purple")
 
-task_label = Label(window, text="Downloading...")
-task_label.pack()
+# Drawing a polygon
+points = [250, 0, 500, 500, 0, 500]
+canvas.create_polygon(points, fill="yellow", outline="black", width=5)
 
-button = Button(window, text="Download Game", command=start)
-button.pack(pady=10)
+# Correct usage of style parameter for creating a "chord" shape
+canvas.create_arc(0, 0, 500, 500, fill="red", extent=180, width=10)
+canvas.create_arc(0, 0, 500, 500, fill="white", start=180, extent=180, width=10)
+canvas.create_oval(190, 190, 310,310,fill="white", width=10)
 
+canvas.pack()
 window.mainloop()
+
+
 
 
 
